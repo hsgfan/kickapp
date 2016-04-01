@@ -1,0 +1,8 @@
+md-bottom-sheet.place-marker {
+  height: 220px;
+  bottom: 80px;
+}
+md-bottom-sheet.place-marker.field1 {
+  background: url(/assets/images/field1.jpg);
+  background-size: auto 220px;
+}

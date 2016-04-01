@@ -3,12 +3,15 @@
 angular.module('kickappApp')
   .controller('MainCtrl', function($scope, $mdBottomSheet) {
     $scope.clickMarker = function() {
+      var oNewScope = $scope.$new();
+      oNewScope.place = 'test';
       $mdBottomSheet.show({
-        options: {
-          disableBackdrop: true
-        },
-        template: '<md-bottom-sheet>Hello!</md-bottom-sheet>'
+        templateUrl: 'app/placeMarker/placeMarkerTemplate.html',
+        controller: 'PlaceMarkerCtrl',
+        disableBackdrop: true,
+        scope: oNewScope
       });
+
     };
     $scope.map = {
       center: {
