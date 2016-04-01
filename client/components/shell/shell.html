@@ -1,20 +1,4 @@
 <div ng-controller="ShellCtrl" class="main-shell">
-  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-    <md-toolbar class="md-tall md-accent">
-
-      <div ng-if="isLoggedIn()" layout="column" layout-padding class="profile-container">
-        <div flex></div>
-        <div layout-padding layout="column">
-          <div class="profile-name">{{ getCurrentUser().name }}</div>
-          <div class="profile-email">{{ getCurrentUser().email }}</div>
-        </div>
-      </div>
-
-    </md-toolbar>
-    <md-content layout-padding>
-
-    </md-content>
-  </md-sidenav>
   <md-toolbar scroll>
     <div class="md-toolbar-tools">
       <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings">
@@ -78,4 +62,20 @@
       </md-menu>
     </div>
   </md-toolbar>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar class="md-tall md-accent">
+
+      <div ng-if="isLoggedIn()" layout="column" layout-padding class="profile-container">
+        <div flex></div>
+        <div layout-padding layout="column">
+          <div class="profile-name">{{ getCurrentUser().name }}</div>
+          <div class="profile-email">{{ getCurrentUser().email }}</div>
+        </div>
+      </div>
+
+    </md-toolbar>
+    <md-content layout-padding>
+
+    </md-content>
+  </md-sidenav>
 </div>

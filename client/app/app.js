@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('kickappApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngAnimate',
-  'ngMessages',
-  'ui.router',
-  'ngMaterial'
-])
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngAnimate',
+    'ngMessages',
+    'ui.router',
+    'ngMaterial',
+    'uiGmapgoogle-maps'
+  ])
   .config(function($mdIconProvider) {
     $mdIconProvider
       .iconSet('action', '../assets/iconsets/action-icons.svg', 24)
@@ -29,7 +30,7 @@ angular.module('kickappApp', [
       .iconSet('toggle', '../assets/iconsets/toggle-icons.svg', 24)
       .iconSet('avatar', '../assets/iconsets/avatar-icons.svg', 128);
   })
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
 
@@ -37,40 +38,51 @@ angular.module('kickappApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
-  .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
-    return {
-      // Add authorization token to headers
-      request: function (config) {
-        config.headers = config.headers || {};
-        if ($cookieStore.get('token')) {
-          config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
-        }
-        return config;
-      },
+.config(function($mdGestureProvider) {
+  $mdGestureProvider.skipClickHijack();
+})
 
-      // Intercept 401s and redirect you to login
-      responseError: function(response) {
-        if(response.status === 401) {
-          $location.path('/login');
-          // remove any stale tokens
-          $cookieStore.remove('token');
-          return $q.reject(response);
-        }
-        else {
-          return $q.reject(response);
-        }
+.config(function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    // key: 'your api key',
+    v: '3.20', //defaults to latest 3.X anyhow
+    libraries: 'weather,geometry,visualization'
+  });
+})
+
+.factory('authInterceptor', function($rootScope, $q, $cookieStore, $location) {
+  return {
+    // Add authorization token to headers
+    request: function(config) {
+      config.headers = config.headers || {};
+      if ($cookieStore.get('token')) {
+        config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
       }
-    };
-  })
+      return config;
+    },
 
-  .run(function ($rootScope, $location, Auth) {
-    // Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on('$stateChangeStart', function (event, next) {
-      Auth.isLoggedInAsync(function(loggedIn) {
-        if (next.authenticate && !loggedIn) {
-          event.preventDefault();
-          $location.path('/login');
-        }
-      });
+    // Intercept 401s and redirect you to login
+    responseError: function(response) {
+      if (response.status === 401) {
+        $location.path('/login');
+        // remove any stale tokens
+        $cookieStore.remove('token');
+        return $q.reject(response);
+      } else {
+        return $q.reject(response);
+      }
+    }
+  };
+})
+
+.run(function($rootScope, $location, Auth) {
+  // Redirect to login if route requires auth and you're not logged in
+  $rootScope.$on('$stateChangeStart', function(event, next) {
+    Auth.isLoggedInAsync(function(loggedIn) {
+      if (next.authenticate && !loggedIn) {
+        event.preventDefault();
+        $location.path('/login');
+      }
     });
   });
+});
