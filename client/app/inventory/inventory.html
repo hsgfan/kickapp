@@ -10,7 +10,71 @@
     <md-tabs md-stretch-tabs="always" md-align-tabs="center center" md-dynamic-height="false" layout-fill>
       <md-tab label="Details">
         <div layout-fill>
+          <div class="detail-field">
+            <img src='/assets/images/field1.jpg'>
+          </div>
           <md-content class="md-padding">
+            <div flex layout-fill layout="column">
+              <div flex layout="row" class="detail-row first-row">
+                <div flex layout="column">
+                  <h3>Gender</h3>
+                  <div flex layout-fill layout="row" class="gender">
+                    <div>
+                      <img src="/assets/icons/female.png">
+                    </div>
+                    <div>
+                      <img src="/assets/icons/male.png">
+                    </div>
+                  </div>
+                </div>
+                <div flex layout="column">
+                  <h3>Available Equipment</h3>
+                  <div flex layout-fill layout="row" class="equipment">
+                    <img src="/assets/icons/cleats.png">
+                    <img src="/assets/icons/shirt.png">
+                    <img src="/assets/icons/ball.png">
+                    <img src="/assets/icons/light.png">
+                    <img src="/assets/icons/water.png">
+                    <img src="/assets/icons/pump.png">
+                  </div>
+                </div>
+              </div>
+              <div flex layout="row" class="detail-row">
+                <div flex layout="column">
+                  <h3>Hours</h3>
+                  <div>3:00 PM - 5:00 PM</div>
+                  <div>04/03/2016</div>
+                </div>
+                <div flex layout="column">
+                  <h3>Weather</h3>
+                  <div>
+                    <img class="weather" src="/assets/icons/weather.png">
+                  </div>
+                </div>
+              </div>
+              <div flex layout="row" class="detail-row">
+                <div flex layout="column">
+                  <h3>Available Spots</h3>
+                  <div flex layout="row">
+                    <span class="avail">3</span>
+                    <span class="sep">/</span>
+                    <span class="cap">22</span>
+                  </div>
+                </div>
+                <div flex layout="column">
+                  <h3>Skill Level</h3>
+                  <div class="skill">
+                    <img src="/assets/icons/gold_badge.png">
+                    <span class>Gold</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div flex layout-fill class="swipe-field" md-swipe-left="onSwipeLeft()">
+              <img class="swipe-ball" src="/assets/icons/ball.png">
+              <span class="no-select">Swipe me in!</span>
+              <md-icon md-font-icon="android" aria-label="android"></md-icon>
+            </div>
           </md-content>
         </div>
       </md-tab>
@@ -34,7 +98,7 @@
                     <img ng-src="/assets/images/im1.png" class="custom-media">
                   </div>
                 </md-card-title-media>
-                <md-card-title-text >
+                <md-card-title-text>
                   <div layout-fill layout="column">
                     <div layout="row">
                       <span class="label-main-heading">FG Shoes</span>
@@ -53,7 +117,7 @@
                         <span class="label-pre-heading">Condition</span>
                         <span class="label-diff-heading">Like New</span>
 
-                        </div>
+                      </div>
 
                     </div>
 
@@ -76,7 +140,7 @@
                     <img ng-src="/assets/images/im3.png" class="custom-media">
                   </div>
                 </md-card-title-media>
-                <md-card-title-text >
+                <md-card-title-text>
                   <div layout-fill layout="column">
                     <div layout="row">
                       <span class="label-main-heading">FG Shoes</span>
@@ -119,7 +183,7 @@
                     <img ng-src="/assets/images/im4.png" class="custom-media">
                   </div>
                 </md-card-title-media>
-                <md-card-title-text >
+                <md-card-title-text>
                   <div layout-fill layout="column">
                     <div layout="row">
                       <span class="label-main-heading">FG Shoes</span>
@@ -162,7 +226,7 @@
                     <img ng-src="/assets/images/im21.png" class="custom-media">
                   </div>
                 </md-card-title-media>
-                <md-card-title-text >
+                <md-card-title-text>
                   <div layout-fill layout="column">
                     <div layout="row">
                       <span class="label-main-heading">FG Shoes</span>
@@ -205,7 +269,7 @@
                     <img ng-src="/assets/images/im33.png" class="custom-media">
                   </div>
                 </md-card-title-media>
-                <md-card-title-text >
+                <md-card-title-text>
                   <div layout-fill layout="column">
                     <div layout="row">
                       <span class="label-main-heading">FG Shoes</span>
@@ -243,7 +307,6 @@
           </md-content>
         </div>
       </md-tab>
-      </md-tabs>
+    </md-tabs>
   </div>
 </div>
-

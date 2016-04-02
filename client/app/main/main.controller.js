@@ -1,11 +1,15 @@
 'use strict';
 
 angular.module('kickappApp')
-  .controller('MainCtrl', function($scope, $mdBottomSheet, $interval) {
+  .controller('MainCtrl', function($scope, $mdBottomSheet, $interval, $state) {
     $scope.mapObject = {
       control: {}
     };
     $scope.onSlideClick = function(iId) {
+      console.log(iId);
+      $state.go('inventory', {
+        fieldId: iId
+      });
       //direct to
     };
     $scope.slides = [{

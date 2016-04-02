@@ -52,22 +52,22 @@ app.config(function(uiGmapGoogleMapApiProvider) {
   });
 });
 
-app.config(function ($mdThemingProvider) {
+app.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('blue')
     .accentPalette('blue')
 
 })
 
-  app.config(function ($stateProvider) {
-    $stateProvider
-      .state('inventory', {
-        url: '/inventory',
-        templateUrl: 'app/inventory/inventory.html',
-        controller: 'InventoryCtrl'
-      });
+app.config(function($stateProvider) {
+  $stateProvider
+    .state('inventory', {
+      url: '/inventory/:fieldId',
+      templateUrl: 'app/inventory/inventory.html',
+      controller: 'InventoryCtrl'
+    });
 
-  });
+});
 
 
 app.directive('carousel', [function() {
