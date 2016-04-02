@@ -2,9 +2,23 @@
   <div id="field-carousel">
     <uib-carousel active="active" no-wrap="noWrapSlides" template-url="app/carouselOverride.tpl.html">
       <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
         <div class="carousel-caption">
+          <div>
+            <img id="av" src="/assets/icons/available.png">{{selectedField.numberOfSpots}} Available Spots
+          </div>
+          <h3>{{selectedField.name}}</h3>
+          <div flex layout="row" layout-align="beginning end">
+            <div class="address">
+              {{selectedField.address}}
+            </div>
+            <div flex class="safety" layout="row" layout-align="end end">
+              <div class="safety-item" ng-repeat="safetyness in getSafetyness(selectedField) track by $index">
+                <img src="/assets/icons/safety.png ">
+              </div>
+            </div>
+          </div>
         </div>
+        <img ng-src="{{slide.image}} " style="margin:auto; ">
       </uib-slide>
     </uib-carousel>
   </div>

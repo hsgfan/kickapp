@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kickappApp')
-  .controller('MainCtrl', function($scope, $mdBottomSheet) {
+  .controller('MainCtrl', function($scope, $mdBottomSheet, $interval) {
     $scope.mapObject = {
       control: {}
     };
@@ -12,11 +12,25 @@ angular.module('kickappApp')
       image: '/assets/images/field1.jpg',
       id: 1
     }];
+    $scope.fields = [{
+      id: 0,
+      numberOfSpots: 3,
+      name: 'Lakeside Park',
+      address: '660 Bellevue Ave, Oakland, CA 94610',
+      safety: 3
+    }, {
+      id: 1,
+      numberOfSpots: 5,
+      name: 'Shoreside Park',
+      address: '610 First Ave, Oakland, CA 93610',
+      safety: 2
+    }];
     $scope.active = 0;
     $scope.noWrapSlides = false;
     $scope.active = 0;
     $scope.clickMarker = function(oEvent) {
       focusMarker(oEvent.key);
+      switchSlideContent(oEvent.key);
       var oNewScope = $scope.$new();
       $mdBottomSheet.show({
         templateUrl: 'app/main/placeMarkerTemplate.html',
@@ -24,10 +38,16 @@ angular.module('kickappApp')
         disableBackdrop: true,
         scope: oNewScope
       });
+      $scope.getSafetyness = function(oField) {
+        return new Array(oField.safety);
+      };
 
       oNewScope.$watch('active', function(currentSlide, previousSlide) {
         if (currentSlide !== previousSlide) {
           focusMarker(currentSlide);
+          $interval(function() {
+            switchSlideContent(currentSlide);
+          }, 500, 1);
         }
       });
 
@@ -62,7 +82,12 @@ angular.module('kickappApp')
       $scope.oFocusMarker = _.find($scope.markers, function(oMarker) {
         return oMarker.id === iKey;
       });
-
       $scope.oFocusMarker.icon = 'assets/icons/available-marker.png';
+    };
+    var switchSlideContent = function(iKey) {
+      console.log("XXX");
+      $scope.selectedField = _.find($scope.fields, function(oField) {
+        return oField.id === iKey;
+      });
     };
   });
