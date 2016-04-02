@@ -17,7 +17,7 @@ angular.module('kickappApp')
     var iId = $stateParams.fieldId;
     console.log(iId);
     $scope.getSafetyness = function(selectedField) {
-      return new Array(3);
+      return new Array(4);
     };
     $scope.onBackButtonClick = function() {
       $window.history.back();

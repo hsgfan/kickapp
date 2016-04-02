@@ -16,20 +16,26 @@ angular.module('kickappApp')
       image: '/assets/images/field1.jpg',
       id: 0
     }, {
-      image: '/assets/images/field1.jpg',
+      image: '/assets/icons/field3.jpeg',
       id: 1
     }];
     $scope.fields = [{
       id: 0,
       numberOfSpots: 3,
-      name: 'Lakeside Park',
-      address: '660 Bellevue Ave, Oakland, CA 94610',
-      safety: 3
+      name: 'Baldium Sports',
+      address: '800 W Tower Ave, Oakland, CA 94501',
+      safety: 4
     }, {
       id: 1,
       numberOfSpots: 5,
-      name: 'Shoreside Park',
-      address: '610 First Ave, Oakland, CA 93610',
+      name: 'Alameda Point',
+      address: 'Lexington St, Alameda, CA 94501',
+      safety: 1
+    }, {
+      id: 1,
+      numberOfSpots: 5,
+      name: 'Mainstreet Soccer Field',
+      address: '2040 Main St, Alameda, CA 94501',
       safety: 2
     }];
     $scope.active = 0;
@@ -61,8 +67,8 @@ angular.module('kickappApp')
     };
     $scope.map = {
       center: {
-        latitude: 37.8152684,
-        longitude: -122.2922745
+        latitude: 37.7843682,
+        longitude: -122.2993357
       },
       pan: true,
       zoom: 15,
@@ -70,26 +76,30 @@ angular.module('kickappApp')
         disableDefaultUI: true
       }
     };
-
     $scope.markers = [{
       id: 0,
-      latitude: 37.8152684,
-      longitude: -122.2922745,
-      icon: 'assets/icons/unavailable-marker.png'
+      latitude: 37.7829132,
+      longitude: -122.3033027,
+      icon: 'assets/icons/group1.png'
     }, {
       id: 1,
-      latitude: 37.8122662,
-      longitude: -122.2895987,
-      icon: 'assets/icons/unavailable-marker.png'
+      latitude: 37.7875747,
+      longitude: -122.3048281,
+      icon: 'assets/icons/group.png'
+    }, {
+      id: 2,
+      latitude: 37.7787161,
+      longitude: -122.2930483,
+      icon: 'assets/icons/group4.png'
     }];
     var focusMarker = function(iKey) {
       if (typeof $scope.oFocusMarker !== 'undefined') {
-        $scope.oFocusMarker.icon = 'assets/icons/unavailable-marker.png';
+        $scope.oFocusMarker.icon = 'assets/icons/group1.png';
       }
       $scope.oFocusMarker = _.find($scope.markers, function(oMarker) {
         return oMarker.id === iKey;
       });
-      $scope.oFocusMarker.icon = 'assets/icons/available-marker.png';
+      $scope.oFocusMarker.icon = 'assets/icons/group.png';
     };
     var switchSlideContent = function(iKey) {
       $scope.selectedField = _.find($scope.fields, function(oField) {
