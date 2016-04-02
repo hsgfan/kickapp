@@ -59,3 +59,15 @@
   .address {
     font-size: 12px;
   }
+  .carousel-header {
+    position: absolute;
+    right: 20px;
+    color: #fff;
+    top: 10px;
+  }
+  .fa-1-5x {
+    font-size: 16px !important;
+  }
+  .carousel-indicators {
+    height: 10%;
+  }

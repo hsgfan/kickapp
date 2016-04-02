@@ -5,6 +5,9 @@ angular.module('kickappApp')
     $scope.mapObject = {
       control: {}
     };
+    $scope.onSlideClick = function(iId) {
+      //direct to
+    };
     $scope.slides = [{
       image: '/assets/images/field1.jpg',
       id: 0
@@ -29,13 +32,13 @@ angular.module('kickappApp')
     $scope.noWrapSlides = false;
     $scope.active = 0;
     $scope.clickMarker = function(oEvent) {
-      focusMarker(oEvent.key);
-      switchSlideContent(oEvent.key);
+      var iMarkerId = oEvent.model.id;
+      focusMarker(iMarkerId);
+      switchSlideContent(iMarkerId);
       var oNewScope = $scope.$new();
       $mdBottomSheet.show({
         templateUrl: 'app/main/placeMarkerTemplate.html',
         controller: 'MainCtrl',
-        disableBackdrop: true,
         scope: oNewScope
       });
       $scope.getSafetyness = function(oField) {
@@ -85,7 +88,6 @@ angular.module('kickappApp')
       $scope.oFocusMarker.icon = 'assets/icons/available-marker.png';
     };
     var switchSlideContent = function(iKey) {
-      console.log("XXX");
       $scope.selectedField = _.find($scope.fields, function(oField) {
         return oField.id === iKey;
       });

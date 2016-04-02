@@ -1,7 +1,10 @@
 <md-bottom-sheet class="place-marker field1" layout="column" ng-cloak>
   <div id="field-carousel">
     <uib-carousel active="active" no-wrap="noWrapSlides" template-url="app/carouselOverride.tpl.html">
-      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" active="slide.active">
+      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" active="slide.active" ng-click='onSlideClick(selectedField.id)'>
+        <div class="carousel-header">
+          <i class="fa fa-heart-o heart fa-1-5x"></i>
+        </div>
         <div class="carousel-caption">
           <div>
             <img id="av" src="/assets/icons/available.png">{{selectedField.numberOfSpots}} Available Spots
