@@ -49,6 +49,10 @@ angular.module('kickappApp')
       // This never happens.
     };
 
+    $scope.testInventory = function(){
+     $location.path('/client/app/account/signup/signup.html');
+    };
+
     $scope.showAddDialog = function($event) {
       var parentEl = angular.element(document.body);
       $mdDialog.show({
