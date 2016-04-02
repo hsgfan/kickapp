@@ -69,6 +69,16 @@ app.config(function ($mdThemingProvider) {
 
   });
 
+app.config(function ($stateProvider) {
+  $stateProvider
+    .state('reserve', {
+      url: '/reserve',
+      templateUrl: 'app/reserve/reserve.html',
+      controller: 'ReserveCtrl'
+    });
+
+});
+
 
 app.directive('carousel', [function() {
   return {

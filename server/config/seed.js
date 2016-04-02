@@ -7,6 +7,8 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Inventory=require('../api/inventory/inventory.model');
+var Field=require('../api/field/field.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -55,3 +57,49 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     });
 });
+
+Inventory.find({}).remove(function(){
+  Inventory.create({
+    inventoryId:'1',
+    fieldId:'1',
+    name:'FG Shoes',
+    size:'7',
+    brand:'Nike',
+    condition:'New',
+    sampImgSrc:'/assets/images/im3.png'
+  },
+    {
+      inventoryId:'2',
+      fieldId:'1',
+      name:'Jersey',
+      size:'M',
+      brand:'Nike',
+      condition:'New',
+      sampImgSrc:'/assets/images/im3.png'
+    }),
+    function(){
+      console.log('finished populating inventories');
+    }
+});
+
+Field.find({}).remove(function(){
+  Field.create({
+    id: 0,
+    numberOfSpots: 3,
+    name: 'Lakeside Park',
+    address: '660 Bellevue Ave, Oakland, CA 94610',
+    safety: 3
+  }, {
+    id: 1,
+    numberOfSpots: 5,
+    name: 'Shoreside Park',
+    address: '610 First Ave, Oakland, CA 93610',
+    safety: 2
+  }),
+    function(){
+      console.log('finished populating fields');
+    }
+});
+
+
+
