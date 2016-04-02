@@ -4,3 +4,27 @@
 .angular-google-map {
   height: 100%;
 }
+md-bottom-sheet.place-marker {
+  height: 220px;
+  padding: 0px;
+  bottom: 80px;
+}
+
+/*md-bottom-sheet.place-marker.field1 {
+  background: url(/assets/images/field1.jpg);
+  background-size: auto 220px;
+}*/
+
+md-bottom-sheet.place-marker > div {
+  height: 220px;
+}
+img {
+  margin: auto;
+  height: 220px;
+}
+#field-carousel .carousel {
+  height: 220px;
+}
+#field-carousel .carousel .carousel-inner {
+  height: 100% !important;
+}
