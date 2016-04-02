@@ -1,8 +1,11 @@
 <div layout="column" layout-fill>
   <md-toolbar>
     <div class="md-toolbar-tools">
+      <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings">
+        <md-icon md-svg-icon="assets/icons/keyboard_arrow_left.svg"></md-icon>
+      </md-button>
       <h2>
-        <span flex>kickapp-Inventory</span>
+        <span flex>Field Details</span>
       </h2>
     </div>
   </md-toolbar>
@@ -10,11 +13,29 @@
     <md-tabs md-stretch-tabs="always" md-align-tabs="center center" md-dynamic-height="false" layout-fill>
       <md-tab label="Details">
         <div layout-fill>
-          <div class="detail-field">
-            <img src='/assets/images/field1.jpg'>
-          </div>
-          <md-content class="md-padding">
-            <div flex layout-fill layout="column">
+          <md-content>
+            <div flex layout="column" class="detail-field" layout-fill>
+              <img src='/assets/images/field1.jpg'>
+              <div class="md-padding content">
+                <h3>Lakeside Park</h3>
+                <div flex layout="row" layout-align="beginning end">
+                  <div class="address">
+                    660 Bellevue Ave, Oakland, CA 94610
+                  </div>
+                  <div>
+                    <img class="vending" src="/assets/icons/vending.png">
+                  </div>
+                  <div flex class="safety" layout="row" layout-align="end end">
+                    <div class="safety-item" ng-repeat="safetyness in getSafetyness(selectedField) track by $index">
+                      <div>
+                        <img src="/assets/icons/safety.png ">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div flex layout-fill layout="column" class="md-padding">
               <div flex layout="row" class="detail-row first-row">
                 <div flex layout="column">
                   <h3>Gender</h3>
@@ -69,11 +90,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div flex layout-fill class="swipe-field" md-swipe-left="onSwipeLeft()">
-              <img class="swipe-ball" src="/assets/icons/ball.png">
-              <span class="no-select">Swipe me in!</span>
-              <md-icon md-font-icon="android" aria-label="android"></md-icon>
+              <div flex layout-fill class="swipe-field" md-swipe-left="onSwipeLeft()">
+                <img class="swipe-ball" src="/assets/icons/ball.png">
+                <span class="no-select">Swipe me in!</span>
+                <md-icon md-font-icon="android" aria-label="android"></md-icon>
+              </div>
             </div>
           </md-content>
         </div>

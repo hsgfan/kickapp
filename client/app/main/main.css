@@ -52,6 +52,7 @@
     color: yellow;
   }
   .safety img {
+    width: auto !important;
     height: 25px;
     padding-left: 2px;
     padding-right: 2px;
@@ -115,7 +116,7 @@
     height: 40px;
     text-align: center;
     line-height: 40px;
-    margin-top: 20px;
+    margin-top: 18px;
     border: solid 1px #dadada;
     vertical-align: center;
     font-size: 16px;
@@ -132,4 +133,20 @@
   }
   .first-row img {
     margin: 0px;
+  }
+  .md-padding.content {
+    position: absolute;
+    top: 130px;
+    color: #fff;
+  }
+  .safety.layout-align-end-end.layout-row.flex {
+    margin-left: 50px;
+  }
+  .md-padding.content h3 {
+    margin-bottom: 0px;
+  }
+  img.vending {
+    height: 20px;
+    width: auto;
+    padding-left: 8px;
   }
