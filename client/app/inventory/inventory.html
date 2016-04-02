@@ -1,30 +1,115 @@
 <div layout="column" layout-fill>
   <md-toolbar>
     <div class="md-toolbar-tools">
+      <md-button ng-click="onBackButtonClick()" class="md-icon-button" aria-label="Settings">
+        <md-icon md-svg-icon='assets/icons/back.svg'></md-icon>
+      </md-button>
       <h2>
-        <span flex>kickapp-Inventory</span>
+        <span flex>Field Details</span>
       </h2>
     </div>
   </md-toolbar>
   <div layout-fill>
-    <md-tabs md-stretch-tabs="always" md-align-tabs="center center" md-dynamic-height="false" layout-fill>
-      <md-tab label="Details">
+    <md-tabs md-stretch-tabs="always " md-align-tabs="center center " md-dynamic-height="false " layout-fill>
+      <md-tab label="Details ">
         <div layout-fill>
-          <md-content class="md-padding">
+          <md-content>
+            <div flex layout="column " class="detail-field " layout-fill>
+              <img src='/assets/images/field1.jpg'>
+              <div class="md-padding content ">
+                <h3>Lakeside Park</h3>
+                <div flex layout="row " layout-align="beginning end ">
+                  <div class="address ">
+                    660 Bellevue Ave, Oakland, CA 94610
+                  </div>
+                  <div>
+                    <img class="vending " src="/assets/icons/vending.png ">
+                  </div>
+                  <div flex class="safety " layout="row " layout-align="end end ">
+                    <div class="safety-item " ng-repeat="safetyness in getSafetyness(selectedField) track by $index ">
+                      <div>
+                        <img src="/assets/icons/safety.png ">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div flex layout-fill layout="column " class="md-padding ">
+              <div flex layout="row " class="detail-row first-row ">
+                <div flex layout="column ">
+                  <h3>Gender</h3>
+                  <div flex layout-fill layout="row " class="gender ">
+                    <div>
+                      <img src="/assets/icons/female.png ">
+                    </div>
+                    <div>
+                      <img src="/assets/icons/male.png ">
+                    </div>
+                  </div>
+                </div>
+                <div flex layout="column ">
+                  <h3>Available Equipment</h3>
+                  <div flex layout-fill layout="row " class="equipment ">
+                    <img src="/assets/icons/cleats.png ">
+                    <img src="/assets/icons/shirt.png ">
+                    <img src="/assets/icons/ball.png ">
+                    <img src="/assets/icons/light.png ">
+                    <img src="/assets/icons/water.png ">
+                    <img src="/assets/icons/pump.png ">
+                  </div>
+                </div>
+              </div>
+              <div flex layout="row " class="detail-row ">
+                <div flex layout="column ">
+                  <h3>Hours</h3>
+                  <div>3:00 PM - 5:00 PM</div>
+                  <div>04/03/2016</div>
+                </div>
+                <div flex layout="column ">
+                  <h3>Weather</h3>
+                  <div>
+                    <img class="weather " src="/assets/icons/weather.png ">
+                  </div>
+                </div>
+              </div>
+              <div flex layout="row " class="detail-row ">
+                <div flex layout="column ">
+                  <h3>Available Spots</h3>
+                  <div flex layout="row ">
+                    <span class="avail ">3</span>
+                    <span class="sep ">/</span>
+                    <span class="cap ">22</span>
+                  </div>
+                </div>
+                <div flex layout="column ">
+                  <h3>Skill Level</h3>
+                  <div class="skill ">
+                    <img src="/assets/icons/gold_badge.png ">
+                    <span class>Gold</span>
+                  </div>
+                </div>
+              </div>
+              <div flex layout-fill class="swipe-field " md-swipe-left="onSwipeLeft() ">
+                <img class="swipe-ball " src="/assets/icons/ball.png ">
+                <span class="no-select ">Swipe me in!</span>
+                <md-icon md-font-icon="android " aria-label="android "></md-icon>
+              </div>
+            </div>
           </md-content>
         </div>
       </md-tab>
       <md-tab label="Inventory">
         <div layout-fill>
           <md-content layout-fill>
-            <section layout="row" layout-sm="column" layout-align="center start" layout-wrap>
-              <md-button class="filter_btn_active">All</md-button>
-              <md-button class="filter_btn">
-                <md-icon md-svg-icon="action:launch"></md-icon>Cleats</md-button>
-              <md-button class="filter_btn">
-                <md-icon md-svg-icon="action:launch"></md-icon>Jerseys</md-button>
-              <md-button class="filter_btn">
-                <md-icon md-svg-icon="action:launch"></md-icon>Balls</md-button>
+            <section layout="row " layout-sm="column " layout-align="center start " layout-wrap>
+              <md-button class="filter_btn_active ">All</md-button>
+              <md-button class="filter_btn ">
+                <md-icon md-svg-icon="action:launch "></md-icon>Cleats</md-button>
+              <md-button class="filter_btn ">
+                <md-icon md-svg-icon="action:launch "></md-icon>Jerseys</md-button>
+              <md-button class="filter_btn ">
+                <md-icon md-svg-icon="action:launch "></md-icon>Balls</md-button>
             </section>
 
 
@@ -74,6 +159,10 @@
            <!--</div>-->
 
             <md-card>
+              <md-card-title class="custom-card ">
+                <md-card-title-media class="custom-media-title ">
+                  <div flex class="custom-media ">
+                    <img ng-src="/assets/images/im1.png " class="custom-media ">
               <md-card-title class="custom-card">
                 <md-card-title-media class="custom-media-title">
                   <div flex class="custom-media">
@@ -95,17 +184,17 @@
                         <span class="label-pre-heading">Brands</span>
                         <span class="label-diff-heading">Nike</span>
                       </div>
-                      <div layout="column" class="custom-item-info-temp">
-                        <span class="label-pre-heading">Condition</span>
-                        <span class="label-diff-heading">Like New</span>
+                      <div layout="column " class="custom-item-info-temp ">
+                        <span class="label-pre-heading ">Condition</span>
+                        <span class="label-diff-heading ">Like New</span>
 
                       </div>
 
                     </div>
 
 
-                    <div layout="row" layout-align="end end">
-                      <md-button class="reserve_btn">Reserve</md-button>
+                    <div layout="row " layout-align="end end ">
+                      <md-button class="reserve_btn ">Reserve</md-button>
                     </div>
                   </div>
 
@@ -129,14 +218,14 @@
                       <span class="label-main-heading">Jerseys</span>
                       <span class="label-sub-heading">Available</span>
                     </div>
-                    <div layout="row">
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Size</span>
-                        <span class="label-diff-heading">M</span>
+                    <div layout="row ">
+                      <div layout="column " class="custom-item-info ">
+                        <span class="label-pre-heading ">Size</span>
+                        <span class="label-diff-heading ">M</span>
                       </div>
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Brands</span>
-                        <span class="label-diff-heading">Nike</span>
+                      <div layout="column " class="custom-item-info ">
+                        <span class="label-pre-heading ">Brands</span>
+                        <span class="label-diff-heading ">Nike</span>
                       </div>
                       <div layout="column" class="custom-item-info-temp">
                         <span class="label-pre-heading">Condition</span>
@@ -147,8 +236,8 @@
                     </div>
 
 
-                    <div layout="row" layout-align="end end">
-                      <md-button class="reserve_btn">Reserve</md-button>
+                    <div layout="row " layout-align="end end ">
+                      <md-button class="reserve_btn ">Reserve</md-button>
                     </div>
                   </div>
 
@@ -172,10 +261,10 @@
                       <span class="label-main-heading">Jerseys</span>
                       <span class="label-sub-heading">Available</span>
                     </div>
-                    <div layout="row">
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Size</span>
-                        <span class="label-diff-heading">M</span>
+                    <div layout="row ">
+                      <div layout="column " class="custom-item-info ">
+                        <span class="label-pre-heading ">Size</span>
+                        <span class="label-diff-heading ">M</span>
                       </div>
                       <div layout="column" class="custom-item-info">
                         <span class="label-pre-heading">Brands</span>
@@ -189,8 +278,8 @@
                     </div>
 
 
-                    <div layout="row" layout-align="end end">
-                      <md-button class="reserve_btn">Reserve</md-button>
+                    <div layout="row " layout-align="end end ">
+                      <md-button class="reserve_btn ">Reserve</md-button>
                     </div>
                   </div>
 
@@ -219,21 +308,21 @@
                         <span class="label-pre-heading">Size</span>
                         <span class="label-diff-heading">7</span>
                       </div>
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Brands</span>
-                        <span class="label-diff-heading">Nike</span>
+                      <div layout="column " class="custom-item-info ">
+                        <span class="label-pre-heading ">Brands</span>
+                        <span class="label-diff-heading ">Nike</span>
                       </div>
-                      <div layout="column" class="custom-item-info-temp">
-                        <span class="label-pre-heading">Condition</span>
-                        <span class="label-diff-heading">Like New</span>
+                      <div layout="column " class="custom-item-info-temp ">
+                        <span class="label-pre-heading ">Condition</span>
+                        <span class="label-diff-heading ">Like New</span>
 
                       </div>
 
                     </div>
 
 
-                    <div layout="row" layout-align="end end">
-                      <md-button class="reserve_btn">Reserve</md-button>
+                    <div layout="row " layout-align="end end ">
+                      <md-button class="reserve_btn ">Reserve</md-button>
                     </div>
                   </div>
 
@@ -261,13 +350,13 @@
                         <span class="label-pre-heading">Size</span>
                         <span class="label-diff-heading">5</span>
                       </div>
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Brands</span>
-                        <span class="label-diff-heading">Nike</span>
+                      <div layout="column " class="custom-item-info ">
+                        <span class="label-pre-heading ">Brands</span>
+                        <span class="label-diff-heading ">Nike</span>
                       </div>
-                      <div layout="column" class="custom-item-info-temp">
-                        <span class="label-pre-heading">Condition</span>
-                        <span class="label-diff-heading">Like New</span>
+                      <div layout="column " class="custom-item-info-temp ">
+                        <span class="label-pre-heading ">Condition</span>
+                        <span class="label-diff-heading ">Like New</span>
 
                       </div>
 
@@ -288,7 +377,7 @@
           </md-content>
         </div>
       </md-tab>
-      </md-tabs>
+    </md-tabs>
   </div>
 </div>
 
