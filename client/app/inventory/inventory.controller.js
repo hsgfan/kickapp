@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('kickappApp')
-  .controller('InventoryCtrl',function($scope,$http){
-    var fieldId=1;
-    $scope.inventory={};
-    $scope.name='';
+  .controller('InventoryCtrl', function($scope, $http, $location, $stateParams, $window) {
+    var fieldId = 1;
+    $scope.inventory = {};
+    $scope.name = '';
 
-    $scope.reserve=function($scope){
+    $scope.reserve = function($scope) {
       debugger;
       $location.path('/client/app/reserve/reserve.html');
     };

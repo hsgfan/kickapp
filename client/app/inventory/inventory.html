@@ -100,7 +100,7 @@
         </div>
       </md-tab>
       <md-tab label="Inventory">
-        <div layout-fill>
+        <div layout-fill layout="column">
           <md-content layout-fill>
             <section layout="row " layout-sm="column " layout-align="center start " layout-wrap>
               <md-button class="filter_btn_active ">All</md-button>
@@ -111,273 +111,214 @@
               <md-button class="filter_btn ">
                 <md-icon md-svg-icon="action:launch "></md-icon>Balls</md-button>
             </section>
-
-
-           <!--<div ng-repeat="inventory">-->
-             <!--<md-card>-->
-               <!--<md-card-title class="custom-card">-->
-                 <!--<md-card-title-media class="custom-media-title">-->
-                   <!--<div flex class="custom-media">-->
-                     <!--<img ng-src="{{inventory.sampImgSrc}}" class="custom-media">-->
-                   <!--</div>-->
-                 <!--</md-card-title-media>-->
-                 <!--<md-card-title-text >-->
-                   <!--<div layout-fill layout="column">-->
-                     <!--<div layout="row">-->
-                       <!--<span ng-model="inventory.name" class="label-main-heading">{{inventory.name}}</span>-->
-                       <!--<span class="label-sub-heading">Available</span>-->
-                     <!--</div>-->
-                     <!--<div layout="row">-->
-                       <!--<div layout="column" class="custom-item-info">-->
-                         <!--<span class="label-pre-heading">Size</span>-->
-                         <!--<span ng-model="inventory.size" class="label-diff-heading">{{inventory.size}}</span>-->
-                       <!--</div>-->
-                       <!--<div layout="column" class="custom-item-info">-->
-                         <!--<span class="label-pre-heading">Brands</span>-->
-                         <!--<span  ng-model="inventory.brand" class="label-diff-heading">{{inventory.brand}}</span>-->
-                       <!--</div>-->
-                       <!--<div layout="column" class="custom-item-info-temp">-->
-                         <!--<span class="label-pre-heading">Condition</span>-->
-                         <!--<span ng-model="inventory.condition" class="label-diff-heading">{{inventory.condition}}</span>-->
-
-                       <!--</div>-->
-
-                     <!--</div>-->
-
-
-                     <!--<div layout="row" layout-align="end end">-->
-                       <!--<md-button ng-click="reserve()" class="reserve_btn">Reserve</md-button>-->
-                     <!--</div>-->
-                   <!--</div>-->
-
-
-                 <!--</md-card-title-text>-->
-
-               <!--</md-card-title>-->
-
-             <!--</md-card>-->
-           <!--</div>-->
-
-            <md-card>
-              <md-card-title class="custom-card ">
-                <md-card-title-media class="custom-media-title ">
-                  <div flex class="custom-media ">
-                    <img ng-src="/assets/images/im1.png " class="custom-media ">
-              <md-card-title class="custom-card">
-                <md-card-title-media class="custom-media-title">
-                  <div flex class="custom-media">
-                    <img ng-src="/assets/images/img1.png" class="custom-media">
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text >
-                  <div layout-fill layout="column">
-                    <div layout="row">
-                      <span class="label-main-heading">FG Shoes</span>
-                      <span class="label-sub-heading">Available</span>
+            <div layout-fill>
+              <md-card>
+                <md-card-title class="custom-card ">
+                  <md-card-title-media class="custom-media-title ">
+                    <div flex class="custom-media">
+                      <img src="/assets/images/img1.png" class="custom-media">
                     </div>
-                    <div layout="row">
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Size</span>
-                        <span class="label-diff-heading">6.5</span>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <div layout-fill layout="column">
+                      <div layout="row">
+                        <span class="label-main-heading">FG Shoes</span>
+                        <span class="label-sub-heading">Available</span>
                       </div>
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Brands</span>
-                        <span class="label-diff-heading">Nike</span>
+                      <div layout="row">
+                        <div layout="column" class="custom-item-info">
+                          <span class="label-pre-heading">Size</span>
+                          <span class="label-diff-heading">6.5</span>
+                        </div>
+                        <div layout="column" class="custom-item-info">
+                          <span class="label-pre-heading">Brands</span>
+                          <span class="label-diff-heading">Nike</span>
+                        </div>
+                        <div layout="column " class="custom-item-info-temp ">
+                          <span class="label-pre-heading ">Condition</span>
+                          <span class="label-diff-heading ">Like New</span>
+                        </div>
                       </div>
-                      <div layout="column " class="custom-item-info-temp ">
-                        <span class="label-pre-heading ">Condition</span>
-                        <span class="label-diff-heading ">Like New</span>
+                      <div layout="row " layout-align="end end ">
+                        <md-button class="reserve_btn ">Reserve</md-button>
+                      </div>
+                    </div>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+              <md-card>
+                <md-card-title class="custom-card">
+                  <md-card-title-media class="custom-media-title">
+                    <div flex class="custom-media">
+                      <img src="/assets/images/img2.png" class="custom-media">
+                    </div>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <div layout-fill layout="column">
+                      <div layout="row">
+                        <span class="label-main-heading">Jerseys</span>
+                        <span class="label-sub-heading">Available</span>
+                      </div>
+                      <div layout="row ">
+                        <div layout="column " class="custom-item-info ">
+                          <span class="label-pre-heading ">Size</span>
+                          <span class="label-diff-heading ">M</span>
+                        </div>
+                        <div layout="column " class="custom-item-info ">
+                          <span class="label-pre-heading ">Brands</span>
+                          <span class="label-diff-heading ">Nike</span>
+                        </div>
+                        <div layout="column" class="custom-item-info-temp">
+                          <span class="label-pre-heading">Condition</span>
+                          <span class="label-diff-heading">New</span>
+
+                        </div>
 
                       </div>
 
-                    </div>
 
-
-                    <div layout="row " layout-align="end end ">
-                      <md-button class="reserve_btn ">Reserve</md-button>
-                    </div>
-                  </div>
-
-
-                </md-card-title-text>
-
-              </md-card-title>
-
-            </md-card>
-
-            <md-card>
-              <md-card-title class="custom-card">
-                <md-card-title-media class="custom-media-title">
-                  <div flex class="custom-media">
-                    <img ng-src="/assets/images/img2.png" class="custom-media">
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text >
-                  <div layout-fill layout="column">
-                    <div layout="row">
-                      <span class="label-main-heading">Jerseys</span>
-                      <span class="label-sub-heading">Available</span>
-                    </div>
-                    <div layout="row ">
-                      <div layout="column " class="custom-item-info ">
-                        <span class="label-pre-heading ">Size</span>
-                        <span class="label-diff-heading ">M</span>
+                      <div layout="row " layout-align="end end ">
+                        <md-button class="reserve_btn ">Reserve</md-button>
                       </div>
-                      <div layout="column " class="custom-item-info ">
-                        <span class="label-pre-heading ">Brands</span>
-                        <span class="label-diff-heading ">Nike</span>
-                      </div>
-                      <div layout="column" class="custom-item-info-temp">
-                        <span class="label-pre-heading">Condition</span>
-                        <span class="label-diff-heading">New</span>
-
-                      </div>
-
                     </div>
 
 
-                    <div layout="row " layout-align="end end ">
-                      <md-button class="reserve_btn ">Reserve</md-button>
+                  </md-card-title-text>
+
+                </md-card-title>
+
+              </md-card>
+
+              <md-card>
+                <md-card-title class="custom-card">
+                  <md-card-title-media class="custom-media-title">
+                    <div flex class="custom-media">
+                      <img src="/assets/images/img3.png" class="custom-media">
                     </div>
-                  </div>
-
-
-                </md-card-title-text>
-
-              </md-card-title>
-
-            </md-card>
-
-            <md-card>
-              <md-card-title class="custom-card">
-                <md-card-title-media class="custom-media-title">
-                  <div flex class="custom-media">
-                    <img ng-src="/assets/images/img3.png" class="custom-media">
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text >
-                  <div layout-fill layout="column">
-                    <div layout="row">
-                      <span class="label-main-heading">Jerseys</span>
-                      <span class="label-sub-heading">Available</span>
-                    </div>
-                    <div layout="row ">
-                      <div layout="column " class="custom-item-info ">
-                        <span class="label-pre-heading ">Size</span>
-                        <span class="label-diff-heading ">M</span>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <div layout-fill layout="column">
+                      <div layout="row">
+                        <span class="label-main-heading">Jerseys</span>
+                        <span class="label-sub-heading">Available</span>
                       </div>
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Brands</span>
-                        <span class="label-diff-heading">Adidas</span>
-                      </div>
-                      <div layout="column" class="custom-item-info-temp">
-                        <span class="label-pre-heading">Condition</span>
-                        <span class="label-diff-heading">Like New</span>
-                      </div>
-
-                    </div>
-
-
-                    <div layout="row " layout-align="end end ">
-                      <md-button class="reserve_btn ">Reserve</md-button>
-                    </div>
-                  </div>
-
-
-                </md-card-title-text>
-
-              </md-card-title>
-
-            </md-card>
-
-            <md-card>
-              <md-card-title class="custom-card">
-                <md-card-title-media class="custom-media-title">
-                  <div flex class="custom-media">
-                    <img ng-src="/assets/images/img4.png" class="custom-media">
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text >
-                  <div layout-fill layout="column">
-                    <div layout="row">
-                      <span class="label-main-heading">AG Shoes</span>
-                      <span class="label-sub-heading">Available</span>
-                    </div>
-                    <div layout="row">
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Size</span>
-                        <span class="label-diff-heading">7</span>
-                      </div>
-                      <div layout="column " class="custom-item-info ">
-                        <span class="label-pre-heading ">Brands</span>
-                        <span class="label-diff-heading ">Nike</span>
-                      </div>
-                      <div layout="column " class="custom-item-info-temp ">
-                        <span class="label-pre-heading ">Condition</span>
-                        <span class="label-diff-heading ">Like New</span>
+                      <div layout="row ">
+                        <div layout="column " class="custom-item-info ">
+                          <span class="label-pre-heading ">Size</span>
+                          <span class="label-diff-heading ">M</span>
+                        </div>
+                        <div layout="column" class="custom-item-info">
+                          <span class="label-pre-heading">Brands</span>
+                          <span class="label-diff-heading">Adidas</span>
+                        </div>
+                        <div layout="column" class="custom-item-info-temp">
+                          <span class="label-pre-heading">Condition</span>
+                          <span class="label-diff-heading">Like New</span>
+                        </div>
 
                       </div>
 
-                    </div>
 
-
-                    <div layout="row " layout-align="end end ">
-                      <md-button class="reserve_btn ">Reserve</md-button>
-                    </div>
-                  </div>
-
-
-                </md-card-title-text>
-
-              </md-card-title>
-
-            </md-card>
-            <md-card>
-              <md-card-title class="custom-card">
-                <md-card-title-media class="custom-media-title">
-                  <div flex class="custom-media">
-                    <img ng-src="/assets/images/img5.png" class="custom-media">
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text >
-                  <div layout-fill layout="column">
-                    <div layout="row">
-                      <span class="label-main-heading">Ball</span>
-                      <span class="label-sub-heading">Available</span>
-                    </div>
-                    <div layout="row">
-                      <div layout="column" class="custom-item-info">
-                        <span class="label-pre-heading">Size</span>
-                        <span class="label-diff-heading">5</span>
+                      <div layout="row " layout-align="end end ">
+                        <md-button class="reserve_btn ">Reserve</md-button>
                       </div>
-                      <div layout="column " class="custom-item-info ">
-                        <span class="label-pre-heading ">Brands</span>
-                        <span class="label-diff-heading ">Nike</span>
-                      </div>
-                      <div layout="column " class="custom-item-info-temp ">
-                        <span class="label-pre-heading ">Condition</span>
-                        <span class="label-diff-heading ">Like New</span>
-
-                      </div>
-
                     </div>
 
 
-                    <div layout="row" layout-align="end end">
-                      <md-button class="reserve_btn">Reserve</md-button>
+                  </md-card-title-text>
+
+                </md-card-title>
+
+              </md-card>
+
+              <md-card>
+                <md-card-title class="custom-card">
+                  <md-card-title-media class="custom-media-title">
+                    <div flex class="custom-media">
+                      <img src="/assets/images/img4.png" class="custom-media">
                     </div>
-                  </div>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <div layout-fill layout="column">
+                      <div layout="row">
+                        <span class="label-main-heading">AG Shoes</span>
+                        <span class="label-sub-heading">Available</span>
+                      </div>
+                      <div layout="row">
+                        <div layout="column" class="custom-item-info">
+                          <span class="label-pre-heading">Size</span>
+                          <span class="label-diff-heading">7</span>
+                        </div>
+                        <div layout="column " class="custom-item-info ">
+                          <span class="label-pre-heading ">Brands</span>
+                          <span class="label-diff-heading ">Nike</span>
+                        </div>
+                        <div layout="column " class="custom-item-info-temp ">
+                          <span class="label-pre-heading ">Condition</span>
+                          <span class="label-diff-heading ">Like New</span>
+
+                        </div>
+
+                      </div>
 
 
-                </md-card-title-text>
+                      <div layout="row " layout-align="end end ">
+                        <md-button class="reserve_btn ">Reserve</md-button>
+                      </div>
+                    </div>
 
-              </md-card-title>
 
-            </md-card>
+                  </md-card-title-text>
+
+                </md-card-title>
+
+              </md-card>
+              <md-card>
+                <md-card-title class="custom-card">
+                  <md-card-title-media class="custom-media-title">
+                    <div flex class="custom-media">
+                      <img src="/assets/images/img5.png" class="custom-media">
+                    </div>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <div layout-fill layout="column">
+                      <div layout="row">
+                        <span class="label-main-heading">Ball</span>
+                        <span class="label-sub-heading">Available</span>
+                      </div>
+                      <div layout="row">
+                        <div layout="column" class="custom-item-info">
+                          <span class="label-pre-heading">Size</span>
+                          <span class="label-diff-heading">5</span>
+                        </div>
+                        <div layout="column " class="custom-item-info ">
+                          <span class="label-pre-heading ">Brands</span>
+                          <span class="label-diff-heading ">Nike</span>
+                        </div>
+                        <div layout="column " class="custom-item-info-temp ">
+                          <span class="label-pre-heading ">Condition</span>
+                          <span class="label-diff-heading ">Like New</span>
+
+                        </div>
+
+                      </div>
+
+
+                      <div layout="row" layout-align="end end">
+                        <md-button class="reserve_btn">Reserve</md-button>
+                      </div>
+                    </div>
+
+
+                  </md-card-title-text>
+
+                </md-card-title>
+
+              </md-card>
+            </div>
           </md-content>
         </div>
       </md-tab>
     </md-tabs>
   </div>
 </div>
-

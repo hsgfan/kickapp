@@ -22,3 +22,13 @@
 md-backdrop.md-opaque {
   opacity: 0 !important;
 }
+md-toolbar {
+  background-color: #308529 !important;
+}
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+  color: #308529 !important;
+}
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+  color: #308529 !important;
+  background: #308529 !important;
+}
