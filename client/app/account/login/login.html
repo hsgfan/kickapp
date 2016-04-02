@@ -1,11 +1,12 @@
+<div layout-align="center center">
 <md-content class="md-padding">
-    <md-card class="login-card">
+    <md-card layout="column" class="login-card">
       <md-card-content>
         <h2 class="md-title">Login</h2>
-        <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-        <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+        <!--<p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>-->
+        <!--<p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>-->
 
-        <form name="form" ng-submit="login(form)" novalidate>
+        <form layout="column" name="form" ng-submit="login(form)" novalidate>
           <md-input-container>
             <label>Email</label>
             <input required type="email" name="email" ng-model="user.email">
@@ -22,13 +23,13 @@
           </md-input-container>
           <div layout="row">
             <md-button class="md-primary" type="submit">Login</md-button>
-            <md-button flex type="submit" href="/signup">Register</md-button>
           </div>
         </form>
       </md-card-content>
     </md-card>
-    <div class="love-message">Generated with <md-icon md-svg-icon="action:favorite" class="md-warn"></md-icon> by <a href="https://github.com/sincraianul/generator-angular-material-fullstack">generator-angular-material-fullstack</a>.</div>
+
 </md-content>
+</div>
 
 
 <!-- <div class="container">

@@ -4,6 +4,16 @@ angular.module('kickappApp')
   .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
+    $scope.genders = ['Male','Female','Wish not to disclose'];
+    $scope.selectedGender='';
+    $scope.preferredLocations = ['Oakland'];
+    $scope.getSelectedGender = function() {
+      if ($scope.selectedGender !== undefined) {
+        $scope.user.model.gender=$scope.selectedGender;
+      } else {
+        return "Please select a Gender";
+      }
+    };
 
     $scope.register = function(form) {
       $scope.submitted = true;
@@ -11,6 +21,8 @@ angular.module('kickappApp')
       if(form.$valid) {
         Auth.createUser({
           name: $scope.user.name,
+          gender: $scope.user.gender,
+          skill:$scope.user.skill,
           email: $scope.user.email,
           password: $scope.user.password
         })
@@ -29,6 +41,11 @@ angular.module('kickappApp')
           });
         });
       }
+    };
+
+    $scope.clicked =function(form){
+      $scope.register(form);
+      $location.path('/client/components/shell/shell.html');
     };
 
   });

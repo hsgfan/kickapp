@@ -1,0 +1,32 @@
+.md-input-container {
+  margin-bottom: 12px !important;
+  margin-top: 12px !important;
+}
+
+.errors {
+  font-size: 12px;
+  color: black ;
+  margin-top: 10px; }
+
+.md-accent {
+  color:#2f812e;
+}
+
+.register-card{
+  box-shadow: none;
+}
+
+.custom-label{
+  margin-top: 18px; !important;
+}
+
+.custom-loc-label{
+  margin-top: 18px; !important;
+  margin-bottom: 12px; !important;
+}
+
+.custom-chips{
+  margin-bottom: 12px; !important;
+}
+
+
