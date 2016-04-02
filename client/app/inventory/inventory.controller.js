@@ -6,8 +6,7 @@ angular.module('kickappApp')
     $scope.inventory = {};
     $scope.name = '';
 
-    $scope.reserve = function($scope) {
-      debugger;
+    $scope.reserve = function() {
       $location.path('/client/app/reserve/reserve.html');
     };
     $http.get('/api/inventories/' + fieldId).success(function(inventoryData) {

@@ -95,7 +95,21 @@ Field.find({}).remove(function(){
     name: 'Shoreside Park',
     address: '610 First Ave, Oakland, CA 93610',
     safety: 2
-  }),
+  },
+    {
+      id:2,
+      numberOfSpots:2,
+      name:'Soccer Field',
+      address:'2nd Street, Alameda, CA 94501',
+      safety:2
+    },
+    {
+      id:3,
+      numberOfSpots:5,
+      name:'Bladium Sports and Fitness Club',
+      address:'800 W Tower Ave, Alameda, CA 94501',
+      safety:3
+    }),
     function(){
       console.log('finished populating fields');
     }
