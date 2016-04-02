@@ -8,7 +8,8 @@ angular.module('kickappApp', [
     'ngMessages',
     'ui.router',
     'ngMaterial',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.bootstrap'
   ])
   .config(function($mdIconProvider) {
     $mdIconProvider

@@ -1,5 +1,5 @@
 <div ng-include="'components/shell/shell.html'"></div>
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options='map.options' data-tap-disabled="true">
-  <ui-gmap-marker idKey="1" coords='map.center' click='clickMarker()' options='options' data-tap-disabled="true">
-  </ui-gmap-marker>
+  <ui-gmap-markers models='markers' coords="'self'" icon="'icon'" click='clickMarker'>
+  </ui-gmap-markers>
 </ui-gmap-google-map>

@@ -1,2 +1,11 @@
 <md-bottom-sheet class="place-marker field1" layout="column" ng-cloak>
+  <div id="field-carousel">
+    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
 </md-bottom-sheet>
